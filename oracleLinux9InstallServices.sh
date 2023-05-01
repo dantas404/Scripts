@@ -24,4 +24,4 @@ tar -xf google-cloud-cli-428.0.0-linux-x86_64.tar.gz
 
 ./google-cloud-sdk/install.sh
 
-
+gcloud components install gke-gcloud-auth-plugin
