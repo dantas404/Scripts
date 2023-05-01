@@ -17,3 +17,12 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo dnf install -y https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm
 
 sudo dnf install azure-cli
+
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-428.0.0-linux-x86_64.tar.gz
+
+tar -xf google-cloud-cli-428.0.0-linux-x86_64.tar.gz
+
+./google-cloud-sdk/install.sh
+
+./google-cloud-sdk/bin/gcloud init
+
