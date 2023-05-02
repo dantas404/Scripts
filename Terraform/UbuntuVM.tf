@@ -24,7 +24,6 @@ provider "google" {
 }
 
 resource "google_compute_instance" "my_instance" {
-  credentials = "${file("credentials.json")}"
   name         = var.vm_name
   machine_type = "custom-6-20480"
   zone         = var.zone
