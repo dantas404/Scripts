@@ -18,3 +18,5 @@ terraform init
 terraform plan
 
 terraform apply -var="project_id=${TF_VAR_project_id}" -var="region=${TF_VAR_region}" -var="zone=${TF_VAR_zone}" -var="vm_name=${TF_VAR_vm_name}" -auto-approve
+
+echo "The VM has been created"
