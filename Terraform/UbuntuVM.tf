@@ -45,3 +45,18 @@ resource "google_compute_instance" "my_instance" {
     "google-compute-default-allow-https" = "true"
   }
 }
+
+resource "google_compute_firewall" "my_firewall" {
+  name    = "allow-internet"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "443"]
+  }
+
+  target_tags = ["allow-internet"]
+
+  direction = "EGRESS"
+  destination_ranges = ["0.0.0.0/0"]
+}
