@@ -5,8 +5,9 @@
 # deb http://fasttrack.debian.net/debian-fasttrack/ bullseye-backports-staging main contrib
 
 echo "Installing dependencies..."
+sudo apt install fasttrack-archive-keyring -y
 sudo apt update -y
-sudo apt install git fasttrack-archive-keyring gcc perl make kernel-devel virtualbox virtualbox-ext-pack -y
+sudo apt install git gcc perl make build-essential linux-headers-amd64 dkms nfs-kernel-server virtualbox-dkms virtualbox-ext-pack virtualbox -y
 
 echo "Installing Vagrant..."
 
@@ -15,3 +16,11 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://
 sudo apt update -y
 sudo apt install vagrant -y
 vagrant plugin install vagrant-hostmanager
+vagrant plugin install vagrant-cachier
+cd /home/
+git clone https://github.com/bcwaldon/vagrant_devstack.git
+cd vagrant_devstack/
+VBoxManage hostonlyif create
+VBoxManage hostonlyif ipconfig vboxnet0 --ip 192.168.56.1 --netmask 255.255.248.0
+
+vagrant up
