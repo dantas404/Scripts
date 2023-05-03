@@ -20,7 +20,7 @@ vagrant plugin install vagrant-cachier
 cd /home/
 git clone https://github.com/bcwaldon/vagrant_devstack.git
 cd vagrant_devstack/
-VBoxManage hostonlyif create
-VBoxManage hostonlyif ipconfig vboxnet0 --ip 192.168.56.1 --netmask 255.255.248.0
+# VBoxManage hostonlyif create
+# VBoxManage hostonlyif ipconfig vboxnet0 --ip 192.168.56.1 --netmask 255.255.248.0
 
 vagrant up
